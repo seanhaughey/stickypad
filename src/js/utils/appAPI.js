@@ -22,6 +22,22 @@ module.exports = {
 			error: function(xhr, status, err){
 				console.log(err);
 			}.bind(this)
-		})
+		});
+	},
+
+	removeNote: function(noteId){
+		$.ajax({
+			url: "https://api.mongolab.com/api/1/databases/stickypadreact/collections/notes/"+noteId+"?apiKey=AOEzBlPhFJtfhzkSuqssk4zFYoOUJBrw",
+			type: "DELETE",
+			asynch: true,
+			timeout: 300000,
+			success: function(data){
+				console.log('Note deleted')
+			}.bind(this),
+			error: function(xhr, status, err){
+				console.log(err);
+			}.bind(this)
+		});
+
 	}
 }
