@@ -12,7 +12,6 @@ var AddNoteForm = React.createClass({
 						<div className="large-12 columns">
 							<label>Note Text
 								<input type="text" ref="text" placeholder="Enter Text..." />
-
 							</label>
 							<button className="button">Add</button>
 						</div>
@@ -26,9 +25,9 @@ var AddNoteForm = React.createClass({
 		e.preventDefault();
 		var note = {
 			text: this.refs.text.value.trim()
-		}
-
+		};
 		AppActions.addNote(note);
+		React.findDOMNode(this.refs.text).value = "";
 	}
 
 });

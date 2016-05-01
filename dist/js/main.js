@@ -19592,7 +19592,6 @@ var AddNoteForm = React.createClass({displayName: "AddNoteForm",
 						React.createElement("div", {className: "large-12 columns"}, 
 							React.createElement("label", null, "Note Text", 
 								React.createElement("input", {type: "text", ref: "text", placeholder: "Enter Text..."})
-
 							), 
 							React.createElement("button", {className: "button"}, "Add")
 						)
@@ -19606,9 +19605,9 @@ var AddNoteForm = React.createClass({displayName: "AddNoteForm",
 		e.preventDefault();
 		var note = {
 			text: this.refs.text.value.trim()
-		}
-
+		};
 		AppActions.addNote(note);
+		React.findDOMNode(this.refs.text).value = "";
 	}
 
 });
