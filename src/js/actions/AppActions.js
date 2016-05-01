@@ -4,9 +4,17 @@ var AppConstants = require('../constants/AppConstants');
 var AppActions = {
 	addNote: function(note){
 		AppDispatcher.handleViewAction({
-		actionType: AppConstants.ADD_NOTE,
-		note: note
+			actionType: AppConstants.ADD_NOTE,
+			note: note
 		});
+	},
+
+	receiveNotes: function(notes){
+		AppDispatcher.handleViewAction({
+			actionType: AppConstants.RECEIVE_NOTES,
+			notes: notes
+		});
+
 	}
 }
 
